@@ -127,12 +127,6 @@ document.addEventListener('click', function (e) {
     }
 })
 
-const settingBackground = $('.setting-background')
-settingBackground.on('change', function (e) {
-    window.setCookie('bg_color', $(this).val(), 1)
-    window.location.reload()
-})
-
 $(document).ready(function () {
     const selectStoriesHot = $(".select-stories-hot")
     const wrapperSkeletonStoriesHot = $(".wrapper-skeleton")
@@ -176,21 +170,6 @@ $(document).ready(function () {
 
             handleChangeListHot(categoryId)
         })
-
-        const themeMode = $(".theme_mode")
-        if (themeMode) {
-            themeMode.on('change', function (e) {
-                let valueThemeMode = $(this).is(":checked") ? 'dark' : 'light'
-
-                window.setCookie('bg_color', valueThemeMode, 1)
-                if ($(this).is(":checked")) {
-                    $("body").addClass('dark-theme')
-                } else {
-                    $("body").removeClass('dark-theme')
-                }
-                // window.location.reload()
-            })
-        }
 
         let x = setInterval(() => {
             const selectStoriesHot = document.querySelector('.select-stories-hot')
